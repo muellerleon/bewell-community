@@ -355,6 +355,8 @@ button { font: inherit; cursor: pointer; }
   .modal--request { grid-template-columns: 1fr; }
   .modal__rail { display: none; }
   .closing { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .head, .row__head { flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+  .row { padding: 40px 0; }
   .section { padding: 56px 0; }
   .facts { grid-template-columns: 1fr; }
 }
