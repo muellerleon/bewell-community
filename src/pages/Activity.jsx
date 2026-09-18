@@ -69,6 +69,7 @@ export default function Activity() {
           <Illustration
             name={(activity.banner || activity.art).scene}
             scheme={(activity.banner || activity.art).scheme}
+            image={(activity.banner || activity.art).image}
             fit="meet"
           />
           <span className="banner__scrim" />

@@ -481,7 +481,25 @@ const SCENES = {
 
 export const SCENE_NAMES = Object.keys(SCENES)
 
-export default function Illustration({ name, scheme = 'mint', variant = 0, fit = 'slice', className, style, title }) {
+/* Raster illustrations, when they exist. Drop a file into src/illustrations/ under the name given in
+   src/data.js (see docs/illustration-prompts.md) and it replaces the SVG scene for that slot — no code
+   change, no 404 for slots still waiting. */
+const RASTER = import.meta.glob('../illustrations/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
+const rasterFor = (file) => file && (RASTER[`../illustrations/${file}`] || RASTER[`../illustrations/${file.replace(/\.png$/, '.jpg')}`] || RASTER[`../illustrations/${file.replace(/\.png$/, '.webp')}`])
+
+export default function Illustration({ name, scheme = 'mint', variant = 0, fit = 'slice', image, className, style, title }) {
+  const url = rasterFor(image)
+  if (url) {
+    return (
+      <img
+        className={className}
+        style={{ width: '100%', height: '100%', objectFit: fit === 'meet' ? 'contain' : 'cover', display: 'block', ...style }}
+        src={url}
+        alt={title || ''}
+        loading="lazy"
+      />
+    )
+  }
   const draw = SCENES[name] || SCENES.community
   const c = SCHEMES[scheme] || SCHEMES.mint
   /* 'slice' crops like a photograph — right for tiles. 'meet' shows the whole scene and lets the

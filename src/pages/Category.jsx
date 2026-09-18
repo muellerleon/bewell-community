@@ -25,7 +25,7 @@ export default function Category() {
         </nav>
 
         <div className="banner banner--tall">
-          <Illustration name={category.banner.scene} scheme={category.banner.scheme} fit="meet" />
+          <Illustration name={category.banner.scene} scheme={category.banner.scheme} image={category.banner.image} fit="meet" />
           <span className="banner__scrim" />
           <div className="banner__title">
             <div className="eyebrow" style={{ color: 'rgba(255,255,255,.85)' }}>Popular category</div>

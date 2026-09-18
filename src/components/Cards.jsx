@@ -5,7 +5,7 @@ export function ActivityTile({ activity, showMeta = false }) {
   return (
     <article className="tile">
       <Link className="tile__media" to={`/activity/${activity.id}`} aria-label={activity.title}>
-        <Illustration name={activity.art.scene} scheme={activity.art.scheme} />
+        <Illustration name={activity.art.scene} scheme={activity.art.scheme} image={activity.art.image} />
         <span className="tile__scrim" />
         {showMeta && activity.meta && <span className="tile__meta">{activity.meta.split(' · ')[0]}</span>}
         <h3 className="tile__title">{activity.title}</h3>
@@ -20,7 +20,7 @@ export function ActivityTile({ activity, showMeta = false }) {
 export function CategoryTile({ category }) {
   return (
     <Link className="cat" to={`/category/${category.id}`}>
-      <Illustration name={category.art.scene} scheme={category.art.scheme} />
+      <Illustration name={category.art.scene} scheme={category.art.scheme} image={category.art.image} />
       <span className="cat__scrim" />
       <span className="cat__label">
         <h3>{category.short}</h3>
