@@ -1,15 +1,13 @@
 // Content model for the BeWell Community portal.
-// Photos live in /public/photos and are credited on the /credits page.
-
-const photo = (id) => `${import.meta.env.BASE_URL}photos/${id}.jpg`
+// `art` and `banner` name a scene + colour scheme from components/Illustrations.jsx.
 
 export const categories = [
   {
     id: 'wellness',
     name: 'Wellness & mindfulness',
     short: 'Group meditation',
-    photo: photo('cat_meditation'),
-    banner: photo('cat_meditation'),
+    art: { scene: 'meditation', scheme: 'mint' },
+    banner: { scene: 'meditation', scheme: 'teal' },
     tagline: 'Quiet, breath and a bit of structure',
     intro:
       'Practices that give the day a shape: breathing, sitting still, sleeping better. Most groups run weekly, take complete beginners, and ask nothing of you beyond turning up.',
@@ -24,8 +22,8 @@ export const categories = [
     id: 'arts',
     name: 'Arts & creativity',
     short: 'Pottery',
-    photo: photo('cat_pottery'),
-    banner: photo('x_pottery_wheel'),
+    art: { scene: 'pottery', scheme: 'sand' },
+    banner: { scene: 'pottery', scheme: 'coral' },
     tagline: 'Play is a side of us we neglect',
     intro:
       'Arts & Creativity covers a variety of activities that make use of a side of us we sometimes neglect: play. There is no audience, no grading, and nobody in the room has done it before either.',
@@ -40,8 +38,8 @@ export const categories = [
     id: 'music-dance',
     name: 'Music & dance',
     short: 'Dance',
-    photo: photo('cat_dance'),
-    banner: photo('cat_dance'),
+    art: { scene: 'dance', scheme: 'coral' },
+    banner: { scene: 'dance', scheme: 'lilac' },
     tagline: 'Moving to something, with somebody',
     intro:
       'Dancing and playing put you in a room with other people without requiring you to make conversation. That turns out to be the easiest way back into company.',
@@ -56,8 +54,8 @@ export const categories = [
     id: 'giving',
     name: 'Volunteering & charity',
     short: 'Giving back',
-    photo: photo('cat_giving'),
-    banner: photo('feat_volunteer'),
+    art: { scene: 'volunteer', scheme: 'sand' },
+    banner: { scene: 'volunteer', scheme: 'mint' },
     tagline: 'A few hours that are clearly useful',
     intro:
       'The fastest route out of your own head is a morning where somebody else needs the help. These are short, well-organised shifts with other people, not open-ended commitments.',
@@ -72,8 +70,8 @@ export const categories = [
     id: 'movement',
     name: 'Movement & recreation',
     short: 'Movement outdoors',
-    photo: photo('x_hike2'),
-    banner: photo('feat_walk'),
+    art: { scene: 'walk', scheme: 'teal' },
+    banner: { scene: 'walk', scheme: 'mint' },
     tagline: 'Exercise that is really a conversation',
     intro:
       'Walking, swimming and running groups where the pace is set by the slowest person and nobody is training for anything. The exercise is a side effect.',
@@ -88,8 +86,8 @@ export const categories = [
     id: 'local',
     name: 'Local events & discussion',
     short: 'Group discussion',
-    photo: photo('cat_discussion'),
-    banner: photo('cat_discussion'),
+    art: { scene: 'discussion', scheme: 'lilac' },
+    banner: { scene: 'discussion', scheme: 'mint' },
     tagline: 'Rooms where people actually talk',
     intro:
       'Book clubs, discussion evenings and neighbourhood groups. Structured conversation is much easier than unstructured conversation, which is why these work.',
@@ -108,7 +106,7 @@ export const activities = [
     id: 'calm-mornings',
     title: 'Make your mornings calmer',
     category: 'wellness',
-    photo: photo('feat_meditation'),
+    art: { scene: 'meditation', scheme: 'mint' },
     meta: '8 weeks · Tuesday & Thursday, 7am',
     featured: true,
     summary: 'A 20-minute guided breath and grounding session to start the day steady.',
@@ -122,7 +120,7 @@ export const activities = [
     id: 'guided-meditation',
     title: 'Guided meditation',
     category: 'wellness',
-    photo: photo('cat_meditation'),
+    art: { scene: 'meditation', scheme: 'lilac' },
     meta: 'Weekly · 6 week blocks',
     summary: 'A teacher, a room full of mats, and nothing at all to achieve for an hour.',
     overview: [
@@ -135,7 +133,7 @@ export const activities = [
     id: 'sound-bath',
     title: 'Sound bath evenings',
     category: 'wellness',
-    photo: photo('x_med_room'),
+    art: { scene: 'meditation', scheme: 'teal' },
     meta: 'Monthly · 75 minutes',
     summary: 'You lie on the floor under a blanket while somebody else does the work.',
     overview: [
@@ -148,8 +146,8 @@ export const activities = [
     id: 'wellness-retreat',
     title: 'Find a wellness retreat',
     category: 'wellness',
-    photo: photo('x_med_water'),
-    banner: photo('x_med_water'),
+    art: { scene: 'retreat', scheme: 'mint' },
+    banner: { scene: 'retreat', scheme: 'teal' },
     meta: '2–7 nights · from $320',
     summary: 'A few days away, with people who are doing the same thing you are.',
     overview: [
@@ -170,7 +168,7 @@ export const activities = [
     id: 'pottery-day',
     title: 'Become a potter for a day',
     category: 'arts',
-    photo: photo('feat_pottery'),
+    art: { scene: 'pottery', scheme: 'sand' },
     meta: 'One-off · 5 hours',
     featured: true,
     summary: 'Hands in clay, phone away. A beginner wheel class with a small group.',
@@ -184,7 +182,7 @@ export const activities = [
     id: 'wheel-throwing',
     title: 'Beginner wheel throwing',
     category: 'arts',
-    photo: photo('x_pottery_hands'),
+    art: { scene: 'pottery', scheme: 'coral' },
     meta: '8 weeks · Tuesday evenings',
     summary: 'Tuesday evenings in a shared studio. Clay, tools and firing included.',
     overview: [
@@ -197,7 +195,7 @@ export const activities = [
     id: 'hand-building',
     title: 'Hand-building with clay',
     category: 'arts',
-    photo: photo('x_pottery_bowl'),
+    art: { scene: 'craft', scheme: 'sand' },
     meta: '6 weeks · Thursday evenings',
     summary: 'No wheel, no speed. Pinch, coil and slab, at whatever pace suits you.',
     overview: [
@@ -210,7 +208,7 @@ export const activities = [
     id: 'glaze-paint',
     title: 'Glaze and paint evenings',
     category: 'arts',
-    photo: photo('x_pottery_cups'),
+    art: { scene: 'craft', scheme: 'coral' },
     meta: 'Drop-in · monthly',
     summary: 'Bring something plain, leave with something that is definitely yours.',
     overview: [
@@ -223,7 +221,7 @@ export const activities = [
     id: 'craft-circle',
     title: 'Knit, mend and talk',
     category: 'arts',
-    photo: photo('x_pottery_table'),
+    art: { scene: 'craft', scheme: 'blush' },
     meta: 'Weekly · drop-in',
     summary: 'Bring whatever you are making. Mostly it is an excuse to sit together.',
     overview: [
@@ -236,7 +234,7 @@ export const activities = [
     id: 'studio-evenings',
     title: 'Studio open evenings',
     category: 'arts',
-    photo: photo('cat_pottery'),
+    art: { scene: 'pottery', scheme: 'lilac' },
     meta: 'Drop-in · Friday nights',
     summary: 'The studio, open late, with a technician on hand and nothing scheduled.',
     overview: [
@@ -251,7 +249,7 @@ export const activities = [
     id: 'salsa',
     title: 'Beginner salsa nights',
     category: 'music-dance',
-    photo: photo('cat_dance'),
+    art: { scene: 'dance', scheme: 'coral' },
     meta: 'Weekly · 8 week blocks',
     summary: 'An hour of teaching, an hour of dancing, and a rotating partner.',
     overview: [
@@ -264,7 +262,7 @@ export const activities = [
     id: 'ballroom',
     title: 'Ballroom, two left feet welcome',
     category: 'music-dance',
-    photo: photo('x_dance2'),
+    art: { scene: 'dance', scheme: 'lilac' },
     meta: '6 weeks · Sunday afternoons',
     summary: 'Slow, structured and forgiving. Come alone or bring somebody.',
     overview: [
@@ -277,7 +275,7 @@ export const activities = [
     id: 'partner-dancing',
     title: 'Partner dancing for beginners',
     category: 'music-dance',
-    photo: photo('x_dance3'),
+    art: { scene: 'dance', scheme: 'blush' },
     meta: 'Drop-in · Friday evenings',
     summary: 'One dance, one hour, one evening. The lowest-commitment way in.',
     overview: [
@@ -290,7 +288,7 @@ export const activities = [
     id: 'live-music',
     title: 'Live music social',
     category: 'music-dance',
-    photo: photo('x_music'),
+    art: { scene: 'music', scheme: 'sand' },
     meta: 'Monthly · Sunday afternoons',
     summary: 'Local players, an open circle, and spare instruments for anybody who asks.',
     overview: [
@@ -305,7 +303,7 @@ export const activities = [
     id: 'food-bank',
     title: 'Give a morning to a food bank',
     category: 'giving',
-    photo: photo('feat_volunteer'),
+    art: { scene: 'volunteer', scheme: 'sand' },
     meta: 'One-off · 3 hour shifts',
     featured: true,
     summary: 'Two hours, good company and a very clear sense of having helped.',
@@ -319,7 +317,7 @@ export const activities = [
     id: 'green-days',
     title: 'Neighbourhood green days',
     category: 'giving',
-    photo: photo('cat_giving'),
+    art: { scene: 'garden', scheme: 'mint' },
     meta: 'Monthly · Saturday mornings',
     summary: 'Planting, clearing and painting, with a coffee van and a lot of chat.',
     overview: [
@@ -332,7 +330,7 @@ export const activities = [
     id: 'garden',
     title: 'Community garden mornings',
     category: 'giving',
-    photo: photo('x_garden'),
+    art: { scene: 'garden', scheme: 'sand' },
     meta: 'Weekly · all seasons',
     summary: 'A plot, a shared shed, and people who will teach you what a weed is.',
     overview: [
@@ -347,7 +345,7 @@ export const activities = [
     id: 'saturday-walk',
     title: 'Walk and talk on Saturdays',
     category: 'movement',
-    photo: photo('feat_walk'),
+    art: { scene: 'walk', scheme: 'mint' },
     meta: 'Weekly · 5km · no-drop',
     featured: true,
     summary: 'A 5km social walk with a facilitator, at whatever pace you bring.',
@@ -361,7 +359,7 @@ export const activities = [
     id: 'tuesday-swim',
     title: 'Swim with the Tuesday group',
     category: 'movement',
-    photo: photo('feat_swim'),
+    art: { scene: 'swim', scheme: 'teal' },
     meta: 'Weekly · warm pool',
     featured: true,
     summary: 'A warm pool, a reserved lane, and coffee afterwards without fail.',
@@ -375,7 +373,7 @@ export const activities = [
     id: 'couch-5k',
     title: 'Couch to 5k, together',
     category: 'movement',
-    photo: photo('x_run'),
+    art: { scene: 'run', scheme: 'coral' },
     meta: '9 weeks · twice weekly',
     summary: 'Nine weeks from standing still to running 5km, in a group that waits.',
     overview: [
@@ -388,7 +386,7 @@ export const activities = [
     id: 'trail-days',
     title: 'Trail days',
     category: 'movement',
-    photo: photo('x_hike2'),
+    art: { scene: 'walk', scheme: 'teal' },
     meta: 'Monthly · full day',
     summary: 'A day out of the city with a packed lunch and eight to twelve others.',
     overview: [
@@ -401,7 +399,7 @@ export const activities = [
     id: 'lane-swimming',
     title: 'Lane swimming for beginners',
     category: 'movement',
-    photo: photo('x_swim'),
+    art: { scene: 'swim', scheme: 'mint' },
     meta: '6 weeks · adult beginners',
     summary: 'For adults who never learned properly, taught without any of the fuss.',
     overview: [
@@ -416,7 +414,7 @@ export const activities = [
     id: 'book-club',
     title: 'Book club, one chapter behind',
     category: 'local',
-    photo: photo('x_discussion2'),
+    art: { scene: 'discussion', scheme: 'lilac' },
     meta: 'Monthly · one book',
     summary: 'Half the room has not finished it either. Come anyway.',
     overview: [
@@ -429,7 +427,7 @@ export const activities = [
     id: 'discussion-evenings',
     title: 'Group discussion evenings',
     category: 'local',
-    photo: photo('cat_discussion'),
+    art: { scene: 'discussion', scheme: 'mint' },
     meta: 'Fortnightly · facilitated',
     summary: 'A topic, a facilitator, and a room where nobody has to perform.',
     overview: [
@@ -445,25 +443,25 @@ export const stories = [
     quote: 'I got the right help and advice to pick the class I would never have taken otherwise.',
     name: 'Maria B.',
     detail: 'Member since 2024 · Boston, MA',
-    photo: photo('story_1'),
+    art: { scene: 'portrait', scheme: 'mint', variant: 0 },
   },
   {
     quote: 'I’ve always wanted to try artistic dance. I am so glad I found the courage to do it.',
     name: 'Savannah R.',
     detail: 'Member since 2023 · Austin, TX',
-    photo: photo('story_2'),
+    art: { scene: 'portrait', scheme: 'sand', variant: 1 },
   },
   {
     quote: 'I could have never imagined how fun volunteering could be. And I actually found new friends.',
     name: 'Robert N.',
     detail: 'Member since 2025 · Seattle, WA',
-    photo: photo('story_3'),
+    art: { scene: 'portrait', scheme: 'lilac', variant: 2 },
   },
   {
     quote: 'I joined a Saturday walking group for the exercise and stayed for the people.',
     name: 'Priya K.',
     detail: 'Member since 2024 · Chicago, IL',
-    photo: photo('story_4'),
+    art: { scene: 'portrait', scheme: 'blush', variant: 3 },
   },
 ]
 

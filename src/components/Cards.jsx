@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import Illustration from './Illustrations.jsx'
 
 export function ActivityTile({ activity, showMeta = false }) {
   return (
     <article className="tile">
       <Link className="tile__media" to={`/activity/${activity.id}`} aria-label={activity.title}>
-        <img src={activity.photo} alt="" loading="lazy" />
+        <Illustration name={activity.art.scene} scheme={activity.art.scheme} />
         <span className="tile__scrim" />
         {showMeta && activity.meta && <span className="tile__meta">{activity.meta.split(' · ')[0]}</span>}
         <h3 className="tile__title">{activity.title}</h3>
@@ -19,7 +20,7 @@ export function ActivityTile({ activity, showMeta = false }) {
 export function CategoryTile({ category }) {
   return (
     <Link className="cat" to={`/category/${category.id}`}>
-      <img src={category.photo} alt="" loading="lazy" />
+      <Illustration name={category.art.scene} scheme={category.art.scheme} />
       <span className="cat__scrim" />
       <span className="cat__label">
         <h3>{category.short}</h3>
@@ -32,7 +33,7 @@ export function CategoryTile({ category }) {
 export function StoryCard({ story }) {
   return (
     <figure className="story" style={{ margin: 0 }}>
-      <img src={story.photo} alt="" loading="lazy" />
+      <Illustration name={story.art.scene} scheme={story.art.scheme} variant={story.art.variant} />
       <span className="story__scrim" />
       <figcaption className="story__body">
         <div className="story__mark" aria-hidden="true">“</div>

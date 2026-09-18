@@ -3,6 +3,7 @@ import { activitiesIn, getCategory } from '../data.js'
 import { ActivityTile } from '../components/Cards.jsx'
 import { ClosingCTA } from '../components/Chrome.jsx'
 import { ConciergeAvatar } from '../components/ConciergeModal.jsx'
+import Illustration from '../components/Illustrations.jsx'
 import { useConcierge } from '../components/ConciergeContext.jsx'
 
 export default function Category() {
@@ -24,7 +25,7 @@ export default function Category() {
         </nav>
 
         <div className="banner banner--tall">
-          <img src={category.banner} alt="" />
+          <Illustration name={category.banner.scene} scheme={category.banner.scheme} fit="meet" />
           <span className="banner__scrim" />
           <div className="banner__title">
             <div className="eyebrow" style={{ color: 'rgba(255,255,255,.85)' }}>Popular category</div>

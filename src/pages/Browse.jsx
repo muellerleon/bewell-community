@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { activities, categories } from '../data.js'
 import { ActivityTile } from '../components/Cards.jsx'
 import { ClosingCTA } from '../components/Chrome.jsx'
+import Illustration from '../components/Illustrations.jsx'
 
 const FILTERS = [
   ['all', 'All activities', () => true],
@@ -37,6 +38,8 @@ export default function Browse() {
   return (
     <>
       <section className="browse__head">
+        <div className="browse__art"><Illustration name="community" scheme="mint" fit="meet" /></div>
+        <div className="browse__veil" />
         <div className="wrap">
           <h1>Explore all activities</h1>
           <div className="searchrow">

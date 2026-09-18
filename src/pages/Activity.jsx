@@ -3,6 +3,7 @@ import { activitiesIn, getActivity, getCategory } from '../data.js'
 import { ActivityTile } from '../components/Cards.jsx'
 import { ClosingCTA } from '../components/Chrome.jsx'
 import { ConciergeAvatar } from '../components/ConciergeModal.jsx'
+import Illustration from '../components/Illustrations.jsx'
 import { useConcierge } from '../components/ConciergeContext.jsx'
 
 function InquiryCard({ title, cta, context }) {
@@ -65,7 +66,11 @@ export default function Activity() {
         </div>
 
         <div className="banner">
-          <img src={activity.banner || activity.photo} alt="" />
+          <Illustration
+            name={(activity.banner || activity.art).scene}
+            scheme={(activity.banner || activity.art).scheme}
+            fit="meet"
+          />
           <span className="banner__scrim" />
           <span className="banner__badge">{activity.meta}</span>
         </div>

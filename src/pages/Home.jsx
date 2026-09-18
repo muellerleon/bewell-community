@@ -4,6 +4,7 @@ import { categories, featured, stories, tagIndex } from '../data.js'
 import { ActivityTile, CategoryTile, StoryCard } from '../components/Cards.jsx'
 import { ClosingCTA, Halftone } from '../components/Chrome.jsx'
 import { useConcierge } from '../components/ConciergeContext.jsx'
+import Illustration from '../components/Illustrations.jsx'
 
 /* Placeholder explainer: Robert Waldinger's TED talk on the Harvard study of adult development —
    the evidence behind "wellbeing is something you do with other people". Swap for CCA's own film. */
@@ -40,9 +41,9 @@ function IntroVideo() {
 function ConciergeBand() {
   const { openRequest } = useConcierge()
   const ways = [
-    ['Chat now', 'Message a concierge and get a recommendation in minutes.', 'Start a chat', ['#D3EFE8', '#55ACA3']],
-    ['Call us', 'Speak to a real person, any time of day. No appointment needed.', 'See call options', ['#FCEBCA', '#FCBA39']],
-    ['Send an email', 'Tell us what you are looking for and we will reply within one working day.', 'Email the team', ['#F7CAC9', '#B490E4']],
+    ['Chat now', 'Message a concierge and get a recommendation in minutes.', 'Start a chat', 'chat', 'mint'],
+    ['Call us', 'Speak to a real person, any time of day. No appointment needed.', 'See call options', 'call', 'sand'],
+    ['Send an email', 'Tell us what you are looking for and we will reply within one working day.', 'Email the team', 'email', 'blush'],
   ]
   return (
     <section className="band bg-teal-deep on-dark">
@@ -57,9 +58,9 @@ function ConciergeBand() {
           </p>
         </div>
         <div className="ways">
-          {ways.map(([title, body, cta, [c1, c2]]) => (
+          {ways.map(([title, body, cta, scene, scheme]) => (
             <article className="way" key={title}>
-              <div className="way__art" style={{ background: `linear-gradient(135deg, ${c1}, ${c2})` }} />
+              <div className="way__art"><Illustration name={scene} scheme={scheme} /></div>
               <div className="way__body">
                 <h4>{title}</h4>
                 <p className="small">{body}</p>
