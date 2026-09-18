@@ -93,7 +93,7 @@ export default function ConciergeModal() {
   }
 
   const points = [
-    ['Free and confidential', 'Included in your benefit. Your employer is never told that you asked.'],
+    ['Confidential', 'Included in your benefit. Your employer is never told that you asked.'],
     ['No commitment', 'Nothing is booked on the first call — we listen, then send options.'],
     ['Ten minutes, tops', 'Enough time to work out what you are actually looking for.'],
   ]
@@ -107,12 +107,11 @@ export default function ConciergeModal() {
           <Halftone cols={12} rows={7} color="#ffffff" flip className="modal__raildots" />
           <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: 22, height: '100%' }}>
             <div>
-              <div className="eyebrow" style={{ color: 'rgba(255,255,255,.75)' }}>Care Concierge</div>
-              <h3>A real person, on the phone, within one working day.</h3>
+              <div className="eyebrow" style={{ color: 'rgba(255,255,255,.75)', marginBottom: 18 }}>Work Life Specialist</div>
               <div className="person">
                 <ConciergeAvatar size={64} />
                 <div>
-                  <strong style={{ fontSize: 14 }}>Your Care Concierge</strong>
+                  <strong style={{ fontSize: 14 }}>Your Specialist</strong>
                   <div className="caption" style={{ color: 'rgba(255,255,255,.8)' }}>Available 24/7 · replies within 24 hours</div>
                 </div>
               </div>
@@ -136,11 +135,11 @@ export default function ConciergeModal() {
 
         <form className="modal__form" onSubmit={submit}>
           <div>
-            <h2>Request a concierge call</h2>
+            <h2>Complete a BeWell Request</h2>
             <p className="body" style={{ marginTop: 8 }}>
               {context
-                ? `About ${context}. Four quick questions — everything else we can work out on the call.`
-                : 'Four quick questions. Everything else we can work out on the call.'}
+                ? `About ${context}. Four quick questions.`
+                : 'Four quick questions.'}
             </p>
           </div>
 
@@ -187,7 +186,7 @@ export default function ConciergeModal() {
           )}
 
           <div className="actions">
-            <button className="btn btn--primary" type="submit">Request my call</button>
+            <button className="btn btn--primary" type="submit">Contact Access Line</button>
             <span className="caption" style={{ color: 'var(--teal)' }}>or call us now — 24/7, no appointment needed</span>
           </div>
         </form>
