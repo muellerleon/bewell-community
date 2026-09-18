@@ -7,9 +7,9 @@ export default function Credits() {
     <div className="wrap credits">
       <h1>Illustration system</h1>
       <p className="lede" style={{ margin: '16px 0 24px', maxWidth: 760 }}>
-        Every image on this site is an original flat-vector illustration drawn in SVG, using only the CCA
-        illustration palette from the brand guidelines. Nothing is photography and nothing is stock, so there are
-        no licences to clear and no people pictured who did not agree to be here.
+        Activity tiles, categories and page banners are original flat-vector illustrations drawn in SVG, using only
+        the CCA illustration palette from the brand guidelines — no licences to clear. Member story portraits stay
+        photographic, and are listed separately below.
       </p>
       <div className="notice">
         <strong>How it works.</strong>
@@ -42,9 +42,31 @@ export default function Credits() {
         ))}
       </div>
 
+      <h3 style={{ marginTop: 40 }}>Photography</h3>
+      <p className="body" style={{ margin: '12px 0 18px', maxWidth: 760 }}>
+        Member stories are the one place that stays photographic — a real face carries a testimonial in a way a
+        drawing does not. All four are CC0, which carries no attribution obligation, but they are still stand-ins:
+        nobody pictured agreed to appear as a CCA member beside a quote they did not give. Replace them with
+        consented photography before this goes anywhere public.
+      </p>
+      <table>
+        <thead>
+          <tr><th>File</th><th>Licence</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          {[
+            ['story_1.jpg', 'CC0', 'StockSnap'],
+            ['story_2.jpg', 'CC0', 'Unsplash via Wikimedia Commons'],
+            ['story_3.jpg', 'CC0', 'StockSnap'],
+            ['story_4.jpg', 'CC0', 'StockSnap'],
+          ].map(([file, lic, src]) => (
+            <tr key={file}><td>{file}</td><td>{lic}</td><td>{src}</td></tr>
+          ))}
+        </tbody>
+      </table>
+
       <p className="small" style={{ marginTop: 34 }}>
-        The one remaining third-party asset is the explainer video on the home page — a TED talk standing in for
-        CCA’s own film.
+        The other third-party asset is the explainer video on the home page — a TED talk standing in for CCA’s own film.
       </p>
     </div>
   )

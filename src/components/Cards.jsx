@@ -33,7 +33,7 @@ export function CategoryTile({ category }) {
 export function StoryCard({ story }) {
   return (
     <figure className="story" style={{ margin: 0 }}>
-      <Illustration name={story.art.scene} scheme={story.art.scheme} variant={story.art.variant} />
+      <img src={story.photo} alt="" loading="lazy" />
       <span className="story__scrim" />
       <figcaption className="story__body">
         <div className="story__mark" aria-hidden="true">“</div>

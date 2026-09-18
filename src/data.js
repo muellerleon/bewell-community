@@ -1,5 +1,9 @@
 // Content model for the BeWell Community portal.
 // `art` and `banner` name a scene + colour scheme from components/Illustrations.jsx.
+// Member stories are the one place that stays photographic — real faces carry a testimonial
+// in a way an illustrated bust does not.
+
+const photo = (id) => `${import.meta.env.BASE_URL}photos/${id}.jpg`
 
 export const categories = [
   {
@@ -443,25 +447,25 @@ export const stories = [
     quote: 'I got the right help and advice to pick the class I would never have taken otherwise.',
     name: 'Maria B.',
     detail: 'Member since 2024 · Boston, MA',
-    art: { scene: 'portrait', scheme: 'mint', variant: 0 },
+    photo: photo('story_1'),
   },
   {
     quote: 'I’ve always wanted to try artistic dance. I am so glad I found the courage to do it.',
     name: 'Savannah R.',
     detail: 'Member since 2023 · Austin, TX',
-    art: { scene: 'portrait', scheme: 'sand', variant: 1 },
+    photo: photo('story_2'),
   },
   {
     quote: 'I could have never imagined how fun volunteering could be. And I actually found new friends.',
     name: 'Robert N.',
     detail: 'Member since 2025 · Seattle, WA',
-    art: { scene: 'portrait', scheme: 'lilac', variant: 2 },
+    photo: photo('story_3'),
   },
   {
     quote: 'I joined a Saturday walking group for the exercise and stayed for the people.',
     name: 'Priya K.',
     detail: 'Member since 2024 · Chicago, IL',
-    art: { scene: 'portrait', scheme: 'blush', variant: 3 },
+    photo: photo('story_4'),
   },
 ]
 
