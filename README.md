@@ -25,6 +25,28 @@ npm run dev      # http://localhost:5173
 npm run build    # static output in dist/
 ```
 
+## Leaving feedback on the design
+
+The site ships with [Agentation](https://www.agentation.com/) — click any element, type what
+you want changed, and it produces markdown with the selector, source file and React component
+for an AI coding agent to act on.
+
+It is **off for normal visitors** so the shared link stays clean. To switch it on:
+
+| Where | How |
+| --- | --- |
+| Local dev (`npm run dev`) | Always on |
+| Live site | Add `?annotate=1` before the `#`: `https://muellerleon.github.io/bewell-community/?annotate=1#/` |
+| Turn it off again | Same URL with `?annotate=0` |
+
+The choice is remembered in that browser, so it survives clicking through the site. Annotations
+stay in your own browser's localStorage — nothing is sent anywhere. Use the copy button and
+paste the markdown into Claude Code.
+
+Optional: run the Agentation MCP server (`npx add-mcp "npx -y agentation-mcp server"`) and the
+agent can read and resolve annotations directly, without the copy-paste step. That works against
+the local dev server; the deployed HTTPS site cannot reach a localhost MCP endpoint.
+
 ## Stack
 
 Vite + React, hand-written CSS (no framework), `HashRouter` so it works on GitHub Pages

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { Footer, Header } from './components/Chrome.jsx'
 import ConciergeModal from './components/ConciergeModal.jsx'
+import AnnotationTool from './components/AnnotationTool.jsx'
 import { ConciergeProvider } from './components/ConciergeContext.jsx'
 import Home from './pages/Home.jsx'
 import Browse from './pages/Browse.jsx'
@@ -32,6 +33,7 @@ export default function App() {
       </main>
       <Footer />
       <ConciergeModal />
+      <AnnotationTool />
     </ConciergeProvider>
   )
 }
