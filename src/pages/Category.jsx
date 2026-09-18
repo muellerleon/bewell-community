@@ -86,12 +86,8 @@ export default function Category() {
 
       <section className="section bg-beige">
         <div className="wrap">
-          <div className="head">
-            <div>
-              <div className="eyebrow">{items.length} groups near you</div>
-              <h2 style={{ marginTop: 10 }}>What is running this season</h2>
-            </div>
-            <Link className="link-arrow" to="/browse">Browse everything →</Link>
+          <div className="head head--stack">
+            <h2>Possible examples</h2>
           </div>
           <div className="tiles tiles--4">
             {items.map((a) => <ActivityTile key={a.id} activity={a} showMeta />)}

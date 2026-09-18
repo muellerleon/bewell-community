@@ -152,6 +152,7 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- category tile ---------- */
 .cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cats--4 { grid-template-columns: repeat(4, 1fr); }
 .cat { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 384 / 260; display: block; }
 .cat img, .cat svg { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
 .cat:hover img, .cat:hover svg { transform: scale(1.04); }
@@ -355,9 +356,9 @@ button { font: inherit; cursor: pointer; }
   }
   .header__inner { position: relative; }
   .header__cta .btn { display: none; }
-  .tiles, .tiles--4, .cats, .stories, .ways, .steps, .form-grid, .footer__top, .tagcols { grid-template-columns: 1fr; }
+  .tiles, .tiles--4, .cats, .cats--4, .stories, .ways, .steps, .form-grid, .footer__top, .tagcols { grid-template-columns: 1fr; }
   .stories { grid-template-columns: repeat(2, 1fr); }
-  .cats { grid-template-columns: repeat(2, 1fr); }
+  .cats, .cats--4 { grid-template-columns: repeat(2, 1fr); }
   .modal--request { grid-template-columns: 1fr; }
   .modal__rail { display: none; }
   .closing { flex-direction: column; align-items: flex-start; gap: 24px; }

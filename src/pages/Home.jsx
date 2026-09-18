@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { categories, featured, stories, tagIndex } from '../data.js'
-import { ActivityTile, CategoryTile, StoryCard } from '../components/Cards.jsx'
+import { categories, stories, tagIndex } from '../data.js'
+import { CategoryTile, StoryCard } from '../components/Cards.jsx'
 import { ClosingCTA, Halftone } from '../components/Chrome.jsx'
 import { useConcierge } from '../components/ConciergeContext.jsx'
 
 /* Placeholder explainer: Robert Waldinger's TED talk on the Harvard study of adult development —
    the evidence behind "wellbeing is something you do with other people". Swap for CCA's own film. */
 const VIDEO_ID = '8KkKuTCFvzI'
+
+/* The four tiles on the home page, and the short label each carries. */
+const HOME_TILES = [['movement', 'Recreation'], ['arts', 'Arts'], ['wellness', 'Wellness'], ['giving', 'Volunteer']]
 
 function IntroVideo() {
   const [playing, setPlaying] = useState(false)
@@ -42,18 +45,18 @@ function ConciergeBand() {
   const ways = [
     ['Chat now', 'Message a concierge and get a recommendation in minutes.', 'Start a chat', ['#D3EFE8', '#55ACA3']],
     ['Call us', 'Speak to a real person, any time of day. No appointment needed.', 'See call options', ['#FCEBCA', '#FCBA39']],
-    ['Send an email', 'Tell us what you are looking for and we will reply within one working day.', 'Email the team', ['#F7CAC9', '#B490E4']],
+    ['Submit a request', 'Tell us what you are looking for and we will reply within one working day.', 'Send a request', ['#F7CAC9', '#B490E4']],
   ]
   return (
     <section className="band bg-teal-deep on-dark">
       <Halftone cols={12} rows={14} flip color="#ffffff" className="band__dots" />
       <div className="wrap band__grid">
         <div>
-          <div className="eyebrow" style={{ color: 'rgba(255,255,255,.75)' }}>Care Concierge</div>
+          <div className="eyebrow" style={{ color: 'rgba(255,255,255,.75)' }}>Work Life Specialist</div>
           <h2 style={{ margin: '12px 0 14px' }}>Not sure where to start? Ask a person.</h2>
           <p className="body">
-            Get a free consultation and find the activity you’ll love. Our concierges are here to help anytime of the
-            day — it is included in your benefit, at no cost to you.
+            We are here to help you find the activity you’ll love — any time of day, free, confidential and
+            included in your benefit.
           </p>
         </div>
         <div className="ways">
@@ -88,7 +91,7 @@ export default function Home() {
               people and new activities to enlighten your life in new, unexpected ways.
             </p>
             <div className="hero__ctas">
-              <button className="btn btn--primary" onClick={() => openRequest('hero')}>Request a concierge call</button>
+              <button className="btn btn--primary" onClick={() => openRequest('hero')}>Complete request form</button>
               <Link className="btn btn--light" to="/browse">Explore activities</Link>
             </div>
           </div>
@@ -96,25 +99,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="wrap">
-          <div className="head">
-            <h2>Featured activities</h2>
-            <Link className="link-arrow" to="/browse">See all activities →</Link>
-          </div>
-          <div className="tiles">
-            {featured().map((a) => <ActivityTile key={a.id} activity={a} />)}
-          </div>
-        </div>
-      </section>
 
       <section className="section bg-beige">
         <div className="wrap">
           <div className="head head--stack">
             <h2>Popular categories</h2>
           </div>
-          <div className="cats">
-            {categories.map((c) => <CategoryTile key={c.id} category={c} />)}
+          <div className="cats cats--4">
+            {HOME_TILES.map(([id, label]) => (
+              <CategoryTile key={id} category={{ ...categories.find((c) => c.id === id), short: label }} />
+            ))}
           </div>
         </div>
       </section>
