@@ -5,11 +5,12 @@ const ACTIVITY_SCENES = SCENE_NAMES.filter((n) => !['portrait', 'chat', 'call', 
 export default function Credits() {
   return (
     <div className="wrap credits">
-      <h1>Illustration system</h1>
+      <h1>Imagery</h1>
       <p className="lede" style={{ margin: '16px 0 24px', maxWidth: 760 }}>
-        Activity tiles, categories and page banners are original flat-vector illustrations drawn in SVG, using only
-        the CCA illustration palette from the brand guidelines — no licences to clear. Member story portraits stay
-        photographic, and are listed separately below.
+        Activity tiles, categories and page banners are AI-generated illustrations in the style of CCA’s BeWell
+        library, produced from the prompt pack in <code>docs/illustration-prompts.md</code>. They are CCA’s own
+        assets — no third-party licence to clear. Where an image is missing, an SVG stand-in in the brand palette
+        renders instead. Member story portraits stay photographic and are listed separately below.
       </p>
       <div className="notice">
         <strong>How it works.</strong>
@@ -22,7 +23,7 @@ export default function Credits() {
         </p>
       </div>
 
-      <h3 style={{ marginTop: 40 }}>Scenes</h3>
+      <h3 style={{ marginTop: 40 }}>SVG stand-in scenes</h3>
       <div className="swatches">
         {ACTIVITY_SCENES.map((name, i) => (
           <figure key={name} className="swatch">
