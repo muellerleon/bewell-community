@@ -33,7 +33,7 @@ function InquiryCard({ title, cta, context }) {
       </div>
       <button className="btn btn--primary btn--block" onClick={() => openRequest('inquiry-card', context)}>{cta}</button>
       <p className="caption">
-        Free and confidential. Included in your benefit — your employer is never told that you asked.
+        Confidential and included in your benefit — your employer is never told that you asked.
       </p>
     </aside>
   )
@@ -148,7 +148,7 @@ export default function Activity() {
 
       <ClosingCTA
         title="Still deciding? That is exactly when to call."
-        body="No commitment, no cost, and nothing gets booked on the first call."
+        body="No commitment, and nothing gets booked on the first call."
       />
     </>
   )

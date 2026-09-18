@@ -78,7 +78,7 @@ export default function Category() {
               Talk to our Concierge
             </button>
             <p className="caption">
-              Free and confidential. Included in your benefit — your employer is never told that you asked.
+              Confidential and included in your benefit — your employer is never told that you asked.
             </p>
           </aside>
         </div>
@@ -97,7 +97,7 @@ export default function Category() {
 
       <ClosingCTA
         title="Tell us what you fancy trying. We will find it."
-        body="A concierge calls you back within one working day — free, confidential, included."
+        body="A specialist calls you back within one working day — confidential, and included in your benefit."
         label="Talk to our Concierge"
       />
     </>

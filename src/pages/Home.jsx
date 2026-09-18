@@ -55,7 +55,7 @@ function ConciergeBand() {
           <div className="eyebrow" style={{ color: 'rgba(255,255,255,.75)' }}>Work Life Specialist</div>
           <h2 style={{ margin: '12px 0 14px' }}>Not sure where to start? Ask a person.</h2>
           <p className="body">
-            We are here to help you find the activity you’ll love — any time of day, free, confidential and
+            We are here to help you find the activity you’ll love — any time of day, confidential, and
             included in your benefit.
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function Home() {
 
       <ClosingCTA
         title="Still deciding? That is exactly when to call."
-        body="No commitment, no cost, and nothing gets booked on the first call."
+        body="No commitment, and nothing gets booked on the first call."
       />
     </>
   )
